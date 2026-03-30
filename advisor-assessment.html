@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advisor Assessment | Plan B Residency</title>
+  <meta name="description" content="Assess how investment migration fits your practice and where Plan B Residency can support your team.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page">
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Plan B Residency home">
+        <svg class="logo__icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="#0e3160" stroke-width="2"/>
+          <path d="M8 20h24M20 8c-4 6-4 14 0 20M20 8c4 6 4 14 0 20" stroke="#0e3160" stroke-width="1.2" fill="none"/>
+          <path d="M20 14l-4 10h8l-4-10z" fill="#0e3160" opacity="0.9"/>
+        </svg>
+        <span class="logo__text">Plan B<br>Residency</span>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-primary" id="primary-nav" aria-label="Primary">
+        <a href="about.html">About Us</a>
+        <a href="advisor-resources.html">Advisor Resources</a>
+        <a href="programs.html">Programs</a>
+        <a href="insights.html">Insights</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="nav-login">Advisor Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <header class="page-hero">
+      <div class="container">
+        <span class="section-label" style="color:rgba(255,255,255,0.85);">Self-assessment</span>
+        <h1>Advisor assessment</h1>
+        <p>Five steps capture your client segment, balance-sheet band, current process maturity, and support gaps. Output drives a curated reading path and, where appropriate, a broker shortlist matched to typical source-of-funds profiles you see in practice.</p>
+      </div>
+    </header>
+
+    <div class="container assessment">
+      <div class="assessment__progress" aria-hidden="true"><div class="assessment__progress-bar"></div></div>
+      <form class="assessment-form" data-endpoint="none" action="#" method="post">
+        <div class="assessment-step is-active" data-step="1">
+          <span class="section-label">Step 1 of 5</span>
+          <h2>Who do you primarily serve?</h2>
+          <div class="assessment-options">
+            <label><input type="radio" name="client_base" value="ria" required> High-net-worth households via an RIA or broker-dealer</label>
+            <label><input type="radio" name="client_base" value="fo"> Single or multi-family office</label>
+            <label><input type="radio" name="client_base" value="retirement"> Retirement-focused practice (401k, IRA distribution planning)</label>
+            <label><input type="radio" name="client_base" value="other"> Other institutional or professional context</label>
+          </div>
+        </div>
+        <div class="assessment-step" data-step="2">
+          <span class="section-label">Step 2 of 5</span>
+          <h2>Typical client liquid net worth (household)</h2>
+          <div class="assessment-options">
+            <label><input type="radio" name="nw_band" value="1-5"> $1M–$5M</label>
+            <label><input type="radio" name="nw_band" value="5-25"> $5M–$25M</label>
+            <label><input type="radio" name="nw_band" value="25plus"> $25M+</label>
+            <label><input type="radio" name="nw_band" value="mixed"> Wide range / mixed</label>
+          </div>
+        </div>
+        <div class="assessment-step" data-step="3">
+          <span class="section-label">Step 3 of 5</span>
+          <h2>How familiar is your team with investment migration today?</h2>
+          <div class="assessment-options">
+            <label><input type="radio" name="familiarity" value="new"> New—we receive occasional questions only</label>
+            <label><input type="radio" name="familiarity" value="ad-hoc"> Ad hoc—we’ve referred out without a standard process</label>
+            <label><input type="radio" name="familiarity" value="structured"> Structured—we maintain checklists or approved partners</label>
+            <label><input type="radio" name="familiarity" value="embedded"> Embedded—regular part of planning conversations</label>
+          </div>
+        </div>
+        <div class="assessment-step" data-step="4">
+          <span class="section-label">Step 4 of 5</span>
+          <h2>Where do you need the most support? (select all that apply)</h2>
+          <div class="assessment-options">
+            <label><input type="checkbox" name="support" value="compare"> Program comparison and pricing mechanics</label>
+            <label><input type="checkbox" name="support" value="tax"> Tax and reporting implications (coordination with counsel)</label>
+            <label><input type="checkbox" name="support" value="compliance"> Compliance documentation for referrals</label>
+            <label><input type="checkbox" name="support" value="brokers"> Vetted broker introductions</label>
+            <label><input type="checkbox" name="support" value="client"> Client-facing education materials</label>
+          </div>
+        </div>
+        <div class="assessment-step" data-step="5">
+          <span class="section-label">Step 5 of 5</span>
+          <h2>Contact for your results</h2>
+          <p style="margin-bottom:1rem;">Submit a firm-domain email; we return a structured memo with article links, comparison tools, and next steps for broker introduction if your conflicts policy permits.</p>
+          <label for="as-email">Work email</label>
+          <input type="email" id="as-email" name="assessment_email" required autocomplete="email" style="margin-bottom:1rem;">
+          <label for="as-firm">Firm name</label>
+          <input type="text" id="as-firm" name="assessment_firm" required autocomplete="organization">
+        </div>
+        <div class="assessment-nav">
+          <button type="button" class="btn btn--outline assessment-prev">Back</button>
+          <button type="button" class="btn assessment-next">Next</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/company/planbresidency" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="advisory-board.html">Advisory Board</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© Plan B Residency. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

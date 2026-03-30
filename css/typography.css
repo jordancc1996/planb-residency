@@ -1,0 +1,39 @@
+/* Headings (serif ~54px H1 / 400), section labels (12px uppercase / 3px tracking) */
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw, 3.375rem);
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 3.375rem;
+  }
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+.section-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--section-label-size);
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  margin-bottom: 1rem;
+}
