@@ -1,13 +1,13 @@
 # Plan B Residency — modular assembly guide
 
-Use this document to compose pages from reusable blocks. Full working pages also exist in the project root (`index.html`, `about.html`, etc.) and stay in sync with `partials/`.
+Use this document to compose pages from reusable blocks. The **canonical** pages live in **folders** (`about-us/index.html`, `contact/index.html`, …). Root `about.html`, `contact.html`, etc. are **redirect stubs** only.
 
 ## Global CSS (import order)
 
 Single entry point for the browser:
 
 ```html
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="/css/styles.css">
 ```
 
 `css/styles.css` contains only `@import` lines, in this order:
@@ -29,7 +29,7 @@ Copy **`partials/head-assets.html`** into `<head>` after `<meta charset>`, viewp
 ## Header / footer HTML
 
 - **`partials/header.html`** — `<header class="site-header">` through closing `</header>`.
-- **`partials/footer.html`** — `<footer class="site-footer">` through `</footer>`, plus `<script src="js/main.js"></script>`.
+- **`partials/footer.html`** — `<footer class="site-footer">` through `</footer>`, plus `<script src="/js/main.js"></script>`.
 
 Insert between `<body class="page">` and your `<main>` content (header first, footer last).
 
@@ -50,10 +50,17 @@ Copy **`partials/homepage-main.html`** in full (it includes the opening and clos
 - Forms that should not POST yet: add `data-endpoint="none"`. `js/main.js` prevents default submit and surfaces a short technical notice until you set `action` or fetch to your CRM/API.
 - Remove `data-endpoint="none"` (or set a real endpoint) in production.
 
-## Relative paths
+## URLs, SEO, and hosting
 
-From the site root, `css/styles.css` and `js/main.js` resolve as written. If you deploy in a subdirectory, prefix paths consistently (e.g. `/css/styles.css`).
+- **Production host:** `https://planbresidency.com/` with **root-absolute** `href`/`src` (`/css/styles.css`, `/about-us/`, `/contact/`).
+- **Folder routes:** e.g. `about-us/index.html` → `/about-us/`. Nav targets these paths so static hosts need no SPA router.
+- **`CNAME`:** `planbresidency.com` for GitHub Pages custom domain.
+- **`robots.txt`**, **`sitemap.xml`:** crawler hints; submit sitemap in Google Search Console.
+- **`_redirects`:** Netlify 301s (optional); GitHub Pages ignores it.
+- **Local preview:** serve from repo root (`npx serve .`) so `/css/` resolves; `file://` will not work with absolute paths.
+
+Homepage includes `canonical`, Open Graph, Twitter cards, and JSON-LD (`Organization`, `FinancialService`, `WebSite`, `FAQPage`). Articles under `/insights/.../` include `Article` schema. Align **www vs non-www** in DNS and Search Console with your `link rel="canonical"` URLs (currently **non-www**).
 
 ## Inner pages
 
-Subpages (`about.html`, `contact.html`, …) are not split into partials; copy their `<main>` interiors if you migrate to a templating system. Layout classes match the modules above.
+Substantive HTML lives under `about-us/`, `advisor-resources/`, `programs/`, `insights/`, `contact/`, etc. Copy `<main>` interiors if you migrate to a templating system. **`partials/site-header.html`** and **`partials/site-footer.html`** mirror production nav/footer.

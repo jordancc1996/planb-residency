@@ -48,6 +48,40 @@
   margin-right: auto;
 }
 
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .hero__cta-secondary {
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid rgba(255, 255, 255, 0.88);
+}
+
+.hero .hero__cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.hero__cta-note {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  opacity: 0.88;
+  max-width: 34rem;
+  margin: 1.35rem auto 0;
+}
+
+.hero__cta-note a {
+  color: var(--color-white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .section {
   padding: clamp(3.5rem, 8vw, 6rem) 0;
 }

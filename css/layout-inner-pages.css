@@ -1,4 +1,85 @@
-/* Inner pages: page hero, about arch, resources grid, case studies, contact grid, assessment, insights filters, program rows */
+/* Inner pages: page hero, about arch, resources grid, case studies, contact grid, assessment, insights filters, program rows, long-form articles */
+
+.article-prose {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3rem) 0 4rem;
+}
+
+.article-prose h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+}
+
+.article-prose h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.executive-summary {
+  background: var(--color-off-white);
+  border-left: 4px solid var(--color-navy);
+  padding: 1.25rem 1.5rem;
+  margin: 0 0 2rem;
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+}
+
+.executive-summary h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.executive-summary ul {
+  margin-bottom: 0;
+}
+
+.article-prose p,
+.article-prose ul {
+  margin: 0 0 1rem;
+}
+
+.article-prose ul {
+  padding-left: 1.25rem;
+}
+
+.article-meta {
+  font-size: 0.875rem;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+}
+
+.faq-block details {
+  border: 1px solid rgba(51, 51, 51, 0.12);
+  border-radius: var(--radius-card);
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  background: var(--color-white);
+}
+
+.faq-block summary {
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-block summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-block details[open] summary {
+  margin-bottom: 0.75rem;
+}
+
+.faq-block details p {
+  margin: 0;
+  font-size: 0.9375rem;
+}
 
 .page-hero {
   background: var(--color-navy);
@@ -100,6 +181,147 @@
     align-self: center;
     margin: 0;
   }
+}
+
+.resource-tof {
+  padding: clamp(1.5rem, 4vw, 2.25rem) 0 0;
+  max-width: 42rem;
+  margin: 0 auto;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.resource-tof a {
+  font-weight: 600;
+  color: var(--color-navy);
+}
+
+.resource-gate-panel {
+  padding: clamp(2rem, 5vw, 3.5rem) 0;
+}
+
+.resource-gate-card {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: clamp(1.75rem, 4vw, 2.25rem);
+  background: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: 0 8px 40px rgba(14, 49, 96, 0.1);
+  border: 1px solid rgba(14, 49, 96, 0.08);
+}
+
+.resource-gate-card__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 3vw, 1.6rem);
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: var(--color-navy);
+  line-height: 1.25;
+}
+
+.resource-gate-card > p {
+  margin: 0 0 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.resource-gate-form label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.resource-gate-form input[type="email"],
+.resource-gate-form input[type="text"] {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.resource-gate-form .btn {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.resource-gate-form__fineprint {
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: rgba(51, 51, 51, 0.75);
+  margin: 1rem 0 0;
+}
+
+.resource-gate-form__error {
+  color: #8b2942;
+  font-size: 0.8125rem;
+  margin: 0 0 0.75rem;
+}
+
+.resource-gated-main[hidden] {
+  display: none !important;
+}
+
+.lead-magnet-highlight {
+  margin: clamp(2rem, 5vw, 3rem) 0;
+  padding: clamp(2rem, 5vw, 2.75rem);
+  background: linear-gradient(135deg, #0e3160 0%, #1a4a7a 100%);
+  color: var(--color-white);
+  border-radius: var(--radius-card);
+  box-shadow: 0 12px 40px rgba(14, 49, 96, 0.2);
+}
+
+.lead-magnet-highlight__inner {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .lead-magnet-highlight__inner {
+    grid-template-columns: 1fr minmax(260px, 320px);
+  }
+}
+
+.lead-magnet-highlight h2 {
+  color: var(--color-white);
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+}
+
+.lead-magnet-highlight p {
+  margin: 0 0 0.75rem;
+  opacity: 0.92;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.lead-magnet-highlight ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.lead-magnet-highlight .resource-gate-card {
+  margin: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.lead-magnet-highlight .resource-gate-card__title {
+  font-size: 1.125rem;
+}
+
+.resource-lead-form__thanks {
+  font-size: 0.875rem;
+  color: #1a6b3a;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
 }
 
 .resource-layout {
@@ -232,6 +454,79 @@
 .contact-profile p {
   margin: 0.25rem 0;
   font-size: 0.9375rem;
+}
+
+.assessment-intro {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2rem) 1rem 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.assessment-embed-shell {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem clamp(2rem, 5vw, 3rem);
+}
+
+.assessment-embed-placeholder {
+  padding: clamp(2rem, 5vw, 2.5rem);
+  background: var(--color-off-white);
+  border-radius: var(--radius-card);
+  border: 1px dashed rgba(14, 49, 96, 0.25);
+  text-align: center;
+}
+
+.assessment-embed-placeholder p {
+  margin: 0 0 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.assessment-embed-placeholder code {
+  font-size: 0.8em;
+  word-break: break-all;
+}
+
+.assessment-embed-iframe {
+  display: block;
+  width: 100%;
+  min-height: 560px;
+  border: none;
+  border-radius: var(--radius-card);
+  background: var(--color-off-white);
+}
+
+.assessment-fallback-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1rem clamp(3rem, 6vw, 4rem);
+}
+
+.assessment-fallback-wrap summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-navy);
+  padding: 0.75rem 0;
+  list-style: none;
+}
+
+.assessment-fallback-wrap summary::-webkit-details-marker {
+  display: none;
+}
+
+.assessment-fallback-wrap summary::before {
+  content: "▸ ";
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.assessment-fallback-wrap[open] summary::before {
+  transform: rotate(90deg);
 }
 
 .assessment {

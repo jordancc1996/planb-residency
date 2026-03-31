@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advisor Assessment | Qualify Before Scheduling | Plan B Residency</title>
+  <meta name="description" content="Multi-step qualification for RIAs and family offices: client base, AUM band, migration maturity, and support gaps—then book a call. Production: embed Typeform or Jotform; on-site preview available below.">
+  <link rel="canonical" href="https://planbresidency.com/advisor-assessment/">
+  <meta property="og:url" content="https://planbresidency.com/advisor-assessment/">
+  <meta property="og:title" content="Advisor Assessment | Plan B Residency">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="page">
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a href="/" class="logo" aria-label="Plan B Residency home">
+        <svg class="logo__icon" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="20" cy="20" r="18" stroke="#0e3160" stroke-width="2"/>
+          <path d="M8 20h24M20 8c-4 6-4 14 0 20M20 8c4 6 4 14 0 20" stroke="#0e3160" stroke-width="1.2" fill="none"/>
+          <path d="M20 14l-4 10h8l-4-10z" fill="#0e3160" opacity="0.9"/>
+        </svg>
+        <span class="logo__text">Plan B<br>Residency</span>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="nav-primary" id="primary-nav" aria-label="Primary">
+        <a href="/about-us/">About Us</a>
+        <a href="/advisor-resources/">Advisor Resources</a>
+        <a href="/programs/">Programs</a>
+        <a href="/insights/">Insights</a>
+        <a href="/contact/">Contact</a>
+        <a href="/contact/" class="nav-login">Advisor Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <header class="page-hero">
+      <div class="container">
+        <span class="section-label" style="color:rgba(255,255,255,0.85);">Bottom of funnel</span>
+        <h1>Advisor assessment</h1>
+        <p>Recommended setup: a multi-step <strong>Typeform</strong> or <strong>Jotform</strong> that captures AUM band, client segment, immediacy, and how your firm handles referrals—then routes qualified advisors to Calendly (or your scheduling link). The embed below activates when you paste your form&rsquo;s iframe URL into <code>data-assessment-embed-url</code> on this page&rsquo;s wrapper or set <code>window.PBR_ASSESSMENT_EMBED_URL</code> before <code>main.js</code> loads.</p>
+      </div>
+    </header>
+
+    <div class="assessment-intro container">
+      <p>Until the embed is wired, advisors can <a href="/contact/">contact us</a> to book a call, or expand the on-site preview for a lightweight demo of the qualification logic.</p>
+    </div>
+
+    <!-- Paste your Typeform/Jotform embed src URL, e.g. https://form.typeform.com/to/XXXX -->
+    <div class="assessment-embed-shell" data-assessment-embed-url="">
+      <div class="assessment-embed-placeholder" id="assessment-embed-placeholder">
+        <p><strong>Embed not configured.</strong> Add your multi-step form URL to the <code>data-assessment-embed-url</code> attribute on <code>.assessment-embed-shell</code> in <code>advisor-assessment/index.html</code>, or define <code>window.PBR_ASSESSMENT_EMBED_URL</code> in a script tag above <code>main.js</code>.</p>
+        <p><a href="/contact/" class="btn">Contact to schedule</a></p>
+      </div>
+    </div>
+
+    <details class="assessment-fallback-wrap">
+      <summary>On-site preview (demo — same questions, no CRM handoff)</summary>
+    <div class="container assessment">
+      <div class="assessment__progress" aria-hidden="true"><div class="assessment__progress-bar"></div></div>
+      <form class="assessment-form" data-endpoint="none" action="#" method="post">
+        <div class="assessment-step is-active" data-step="1">
+          <span class="section-label">Step 1 of 5</span>
+          <h2>Who do you primarily serve?</h2>
+          <div class="assessment-options">
+            <label><input type="radio" name="client_base" value="ria" required> High-net-worth households via an RIA or broker-dealer</label>
+            <label><input type="radio" name="client_base" value="fo"> Single or multi-family office</label>
+            <label><input type="radio" name="client_base" value="retirement"> Retirement-focused practice (401k, IRA distribution planning)</label>
+            <label><input type="radio" name="client_base" value="other"> Other institutional or professional context</label>
+          </div>
+        </div>
+        <div class="assessment-step" data-step="2">
+          <span class="section-label">Step 2 of 5</span>
+          <h2>Typical client household scale (AUM / balance-sheet context)</h2>
+          <div class="assessment-options">
+            <label><input type="radio" name="nw_band" value="1-5"> $1M–$5M</label>
+            <label><input type="radio" name="nw_band" value="5-25"> $5M–$25M</label>
+            <label><input type="radio" name="nw_band" value="25plus"> $25M+</label>
+            <label><input type="radio" name="nw_band" value="mixed"> Wide range / mixed</label>
+          </div>
+        </div>
+        <div class="assessment-step" data-step="3">
+          <span class="section-label">Step 3 of 5</span>
+          <h2>How familiar is your team with investment migration today?</h2>
+          <div class="assessment-options">
+            <label><input type="radio" name="familiarity" value="new"> New—we receive occasional questions only</label>
+            <label><input type="radio" name="familiarity" value="ad-hoc"> Ad hoc—we’ve referred out without a standard process</label>
+            <label><input type="radio" name="familiarity" value="structured"> Structured—we maintain checklists or approved partners</label>
+            <label><input type="radio" name="familiarity" value="embedded"> Embedded—regular part of planning conversations</label>
+          </div>
+        </div>
+        <div class="assessment-step" data-step="4">
+          <span class="section-label">Step 4 of 5</span>
+          <h2>Where do you need the most support? (select all that apply)</h2>
+          <div class="assessment-options">
+            <label><input type="checkbox" name="support" value="compare"> Program comparison and pricing mechanics</label>
+            <label><input type="checkbox" name="support" value="tax"> Tax and reporting implications (coordination with counsel)</label>
+            <label><input type="checkbox" name="support" value="compliance"> Compliance documentation for referrals</label>
+            <label><input type="checkbox" name="support" value="brokers"> Vetted broker introductions</label>
+            <label><input type="checkbox" name="support" value="client"> Client-facing education materials</label>
+          </div>
+        </div>
+        <div class="assessment-step" data-step="5">
+          <span class="section-label">Step 5 of 5</span>
+          <h2>Contact for your results</h2>
+          <p style="margin-bottom:1rem;">Submit a firm-domain email; we return a structured memo with article links, comparison tools, and next steps for broker introduction if your conflicts policy permits. In production, this step should mirror your Typeform/Jotform before the calendar handoff.</p>
+          <label for="as-email">Work email</label>
+          <input type="email" id="as-email" name="assessment_email" required autocomplete="email" style="margin-bottom:1rem;">
+          <label for="as-firm">Firm name</label>
+          <input type="text" id="as-firm" name="assessment_firm" required autocomplete="organization">
+        </div>
+        <div class="assessment-nav">
+          <button type="button" class="btn btn--outline assessment-prev">Back</button>
+          <button type="button" class="btn assessment-next">Next</button>
+        </div>
+      </form>
+    </div>
+    </details>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <ul class="footer-links">
+        <li><a href="https://www.linkedin.com/company/planbresidency" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="/careers/">Careers</a></li>
+        <li><a href="/advisory-board/">Advisory Board</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© Plan B Residency. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="/js/main.js"></script>
+</body>
+</html>

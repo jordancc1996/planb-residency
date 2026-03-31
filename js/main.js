@@ -119,8 +119,112 @@
     });
   }
 
+  /* Advisor resources email gate + in-page lead forms */
+  var gateRoot = document.querySelector("[data-resource-gate]");
+  if (gateRoot) {
+    var LS_KEY = "pbr_advisor_resources_unlock_v1";
+    var gatePanel = document.getElementById("resource-gate-panel");
+    var gatedMain = document.getElementById("resource-gated-main");
+
+    function scrollToHash() {
+      var h = window.location.hash;
+      if (!h) return;
+      var target = document.querySelector(h);
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function unlockResources() {
+      try {
+        localStorage.setItem(LS_KEY, "1");
+      } catch (err) {}
+      if (gatePanel) gatePanel.hidden = true;
+      if (gatedMain) gatedMain.hidden = false;
+      scrollToHash();
+    }
+
+    if (localStorage.getItem(LS_KEY) === "1") {
+      unlockResources();
+    }
+
+    var primaryForm = gateRoot.querySelector("form.resource-lead-form[data-unlocks='true']");
+    var sharedSubmitUrl = primaryForm ? (primaryForm.getAttribute("data-submit-url") || "").trim() : "";
+    if (sharedSubmitUrl) {
+      gateRoot.querySelectorAll("form.resource-lead-form").forEach(function (f) {
+        if (!(f.getAttribute("data-submit-url") || "").trim()) {
+          f.setAttribute("data-submit-url", sharedSubmitUrl);
+        }
+      });
+    }
+
+    gateRoot.querySelectorAll("form.resource-lead-form").forEach(function (gateForm) {
+      var unlocks = gateForm.getAttribute("data-unlocks") === "true";
+      var gateErr = gateForm.querySelector(".resource-gate-form__error");
+      var gateBtn = gateForm.querySelector("button[type='submit']");
+      var defaultBtnText = gateBtn ? gateBtn.textContent : "";
+      var thanks = gateForm.querySelector(".resource-lead-form__thanks");
+
+      gateForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (gateErr) gateErr.hidden = true;
+        if (thanks) thanks.hidden = true;
+        var url = (gateForm.getAttribute("data-submit-url") || "").trim();
+        if (!url) {
+          if (unlocks) unlockResources();
+          else if (thanks) {
+            thanks.hidden = false;
+          }
+          return;
+        }
+        if (gateBtn) {
+          gateBtn.disabled = true;
+          gateBtn.textContent = "Sending…";
+        }
+        var fd = new FormData(gateForm);
+        fetch(url, {
+          method: "POST",
+          body: fd,
+          headers: { Accept: "application/json" },
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error("bad status");
+            if (unlocks) unlockResources();
+            else if (thanks) thanks.hidden = false;
+          })
+          .catch(function () {
+            if (gateErr) gateErr.hidden = false;
+          })
+          .finally(function () {
+            if (gateBtn) {
+              gateBtn.disabled = false;
+              gateBtn.textContent = defaultBtnText;
+            }
+          });
+      });
+    });
+  }
+
+  /* Typeform / Jotform embed for advisor assessment (set data-assessment-embed-url on shell) */
+  var embedShell = document.querySelector("[data-assessment-embed-url]");
+  if (embedShell) {
+    var embedUrl = (embedShell.getAttribute("data-assessment-embed-url") || "").trim();
+    if (typeof window.PBR_ASSESSMENT_EMBED_URL === "string" && window.PBR_ASSESSMENT_EMBED_URL.trim()) {
+      embedUrl = window.PBR_ASSESSMENT_EMBED_URL.trim();
+    }
+    var placeholder = embedShell.querySelector(".assessment-embed-placeholder");
+    if (embedUrl) {
+      if (placeholder) placeholder.hidden = true;
+      var iframe = document.createElement("iframe");
+      iframe.className = "assessment-embed-iframe";
+      iframe.title = "Advisor qualification questionnaire";
+      iframe.setAttribute("loading", "lazy");
+      iframe.src = embedUrl;
+      embedShell.appendChild(iframe);
+    }
+  }
+
   /* Forms without a configured POST target */
   document.querySelectorAll('form[data-endpoint="none"]').forEach(function (form) {
+    if (form.classList.contains("resource-gate-form")) return;
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       alert("No submission endpoint is configured. Point this form at your CRM API, secure webhook, or ESP via action/method or fetch().");

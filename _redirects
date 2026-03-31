@@ -1,0 +1,11 @@
+# Netlify-style redirects (301). GitHub Pages ignores this file; use root *.html stubs instead.
+/about.html /about-us/ 301
+/advisor-resources.html /advisor-resources/ 301
+/programs.html /programs/ 301
+/insights.html /insights/ 301
+/contact.html /contact/ 301
+/advisor-assessment.html /advisor-assessment/ 301
+/success-stories.html /advisor-success-stories/ 301
+/careers.html /careers/ 301
+/advisory-board.html /advisory-board/ 301
+/privacy.html /privacy/ 301
