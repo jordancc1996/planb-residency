@@ -56,11 +56,6 @@
   color: var(--color-navy);
 }
 
-.nav-primary .nav-login {
-  color: var(--color-navy);
-  font-weight: 600;
-}
-
 .nav-toggle {
   display: none;
   width: 44px;
