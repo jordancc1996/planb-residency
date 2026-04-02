@@ -277,15 +277,6 @@
   padding: 2rem 1rem;
 }
 
-.testimonial-card__avatar {
-  width: 88px;
-  height: 88px;
-  border-radius: 50%;
-  margin: 0 auto 1.25rem;
-  object-fit: cover;
-  border: 3px solid var(--color-off-white);
-}
-
 .testimonial-card blockquote {
   margin: 0 0 1rem;
   font-family: var(--font-serif);
