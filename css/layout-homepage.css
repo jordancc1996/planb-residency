@@ -446,3 +446,10 @@
 .newsletter-form .btn {
   flex-shrink: 0;
 }
+
+.newsletter-disclaimer {
+  margin: 0.75rem 0 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #9ca3af;
+}

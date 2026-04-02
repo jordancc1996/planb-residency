@@ -29,7 +29,15 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"Organization","@id":"https://www.planbresidency.com/#organization","name":"Plan B Residency","url":"https://www.planbresidency.com/","logo":{"@type":"ImageObject","url":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"},"description":"Plan B Residency delivers B2B research, compliance-oriented workflows, and introductions for family offices and wealth advisors exploring Golden Visas and citizenship by investment. The firm does not custody, manage, or solicit underlying program investments; clients work with licensed brokers and counsel for execution.","sameAs":["https://www.linkedin.com/company/planbresidency"]},
-    {"@type":"FinancialService","@id":"https://www.planbresidency.com/#financialservice","name":"Plan B Residency","url":"https://www.planbresidency.com/","description":"Advisor-facing investment migration services: Reg BI-aligned referral documentation, tax structuring handoff resources, and access to a vetted broker network. Plan B Residency does not manage or custody client investments; the commercial story for end clients is ROI via mobility—residence rights and passport optionality—rather than returns on assets administered by Plan B Residency.","provider":{"@id":"https://www.planbresidency.com/#organization"},"areaServed":{"@type":"Place","name":"United States"}}
+    {"@type":"FinancialService","@id":"https://www.planbresidency.com/#financialservice","name":"Plan B Residency","url":"https://www.planbresidency.com/","description":"Advisor-facing investment migration services: Reg BI-aligned referral documentation, tax structuring handoff resources, and access to a vetted broker network. Plan B Residency does not manage or custody client investments; the commercial story for end clients is ROI via mobility—residence rights and passport optionality—rather than returns on assets administered by Plan B Residency.","provider":{"@id":"https://www.planbresidency.com/#organization"},"areaServed":{"@type":"Place","name":"United States"}},
+    {"@type":"FAQPage","@id":"https://www.planbresidency.com/#faqpage","url":"https://www.planbresidency.com/","mainEntity":[
+      {"@type":"Question","name":"Does a Golden Visa change U.S. tax residency?","acceptedAnswer":{"@type":"Answer","text":"Not automatically. A European residence-by-investment card governs immigration stay rights; U.S. tax residence for non-citizens generally follows the substantial presence test and applicable treaty tie-breaker rules. Tax counsel must analyze days in country and filing positions."}},
+      {"@type":"Question","name":"What documentation do brokers expect for trust-funded CBI?","acceptedAnswer":{"@type":"Answer","text":"Typically the trust instrument, trustee resolutions authorizing the distribution, bank statements along the wire path, and settlor-level source-of-wealth evidence. Narratives must match trust law rather than informal gift language."}},
+      {"@type":"Question","name":"How does Reg BI apply to immigration broker referrals?","acceptedAnswer":{"@type":"Answer","text":"When referrals involve compensation, securities offerings, or dual roles, broker-dealers must document care, conflicts, costs, and reasonable alternatives consistent with Regulation Best Interest. RIAs apply the Advisers Act fiduciary standard."}},
+      {"@type":"Question","name":"Do we custody or manage the underlying Golden Visa investment?","acceptedAnswer":{"@type":"Answer","text":"Plan B Residency provides research and introductions; execution sits with licensed immigration investment brokers and client-selected counsel. Your firm defines what falls inside advisory versus referral."}},
+      {"@type":"Question","name":"How is Plan B Residency different from program promoters?","acceptedAnswer":{"@type":"Answer","text":"Editorial standards exclude pay-to-play rankings; content is written for CFAs, CFPs, and CCOs, with citations suited to compliance review rather than retail conversion funnels."}},
+      {"@type":"Question","name":"Who typically uses this resource?","acceptedAnswer":{"@type":"Answer","text":"RIAs, broker-dealers, multi-family offices, and retirement practices that need documented workflows for client questions on EU Golden Visas, Caribbean CBI, and cross-border tax escalation."}}
+    ]}
   ]}
   </script>
 </head>
@@ -267,6 +275,7 @@
             <input type="email" id="newsletter-email" name="email" required autocomplete="email">
             <button type="submit" class="btn">Subscribe</button>
           </form>
+          <p class="newsletter-disclaimer">No spam, no retail marketing. Unsubscribe anytime.</p>
         </div>
       </div>
     </section>
@@ -281,6 +290,7 @@
         <li><a href="/privacy/">Privacy</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
+      <p class="footer-disclaimer">Plan B Residency provides B2B research and educational resources for financial professionals. We do not provide individualized tax, legal, or investment advice. Execution of investment migration programs should be conducted through licensed immigration counsel and registered broker-dealers.</p>
       <p class="footer-copy">© Plan B Residency. All rights reserved.</p>
     </div>
   </footer>
